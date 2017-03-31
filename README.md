@@ -1,5 +1,5 @@
-# Aion Database 2.7
-This project is a database for Aion version 2.7 and is now available in english and french language.
+# Aion Database 2.7 and 3.9
+This project is a database for Aion 2.7 and Aion 3.9 and is now available in english and french language.
 
 ## Installation instructions :
 
