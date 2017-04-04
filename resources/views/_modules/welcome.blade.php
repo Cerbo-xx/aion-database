@@ -4,7 +4,7 @@
 <div class="row">
 	<div id="welcomeDiv" class="col-md-12">
 		<img src="img/logo.png" alt="Chanology Aion">
-		<h3>@lang('general.welcome.title', ['version' => '2.7', 'siteName' => 'Aion Phénix'])</h3>
+		<h3>@lang('general.welcome.title', ['version' => '2.7', 'siteName' => Config::get('aion.website_name')])</h3>
 		<h4>Il s'agit d'une Database pour Aion qui ne contient que des objets de la version 2.7 issus du client Gameforge 2.7.0.2</h4>
 		<p>Cette base de données est en construction constante, n'hésitez pas à nous faire vos suggestions
 		directement sur le forum.<br/>Merci à tous ceux qui participent au projet !</p>
