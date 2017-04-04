@@ -11,9 +11,8 @@
 	<title>Aion Database 2.7</title>
 	<!-- Bootstrap core CSS -->
 	<link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
-	<link href="{!! asset('css/dataTables.bootstrap.min.css') !!}" rel="stylesheet">
 	<!-- Custom styles for this template; Must be at end of head tag -->
-	<link href="{!! asset('css/custom.css') !!}" rel="stylesheet">
+	<link href="{!! asset('css/aion.css') !!}" rel="stylesheet">
 </head>
 
 <body>
