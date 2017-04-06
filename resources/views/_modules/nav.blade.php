@@ -1,6 +1,12 @@
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Aion Database 2.7</a>
+				@if(Config::get('aion.enable_2_7') == true)
+					<a class="navbar-brand" href="/">Aion Database 2.7</a>
+				@elseif(Config::get('aion.enable_3_9') == true)
+					<a class="navbar-brand" href="/">Aion Database 3.9</a>
+				@else
+					<a class="navbar-brand" href="/">Aion Database</a>
+				@endif
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<div class="collapse navbar-collapse" id="collapsable-menu">
