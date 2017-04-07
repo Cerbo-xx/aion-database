@@ -1,18 +1,15 @@
 		<div class="container">
 			<div class="navbar-header">
-				@if(Config::get('aion.enable_2_7') == true)
-					<a class="navbar-brand" href="/">Aion Database 2.7</a>
-				@elseif(Config::get('aion.enable_3_9') == true)
-					<a class="navbar-brand" href="/">Aion Database 3.9</a>
-				@else
-					<a class="navbar-brand" href="/">Aion Database</a>
-				@endif
+				<a class="navbar-brand" href="/">Aion Database
+				@if(Config::get('aion.enable_2_7') == true) 2.7
+				@elseif(Config::get('aion.enable_3_9') == true) 3.9
+				@endif </a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<div class="collapse navbar-collapse" id="collapsable-menu">
 					<div class="collapse navbar-collapse bs-example-js-navbar-collapse">
 						<ul class="nav navbar-nav">
-						  <li class="dropdown"> <a href="#" data-toggle="dropdown">Objets <b class="caret"></b></a>
+						  <li class="dropdown"> <a href="#" data-toggle="dropdown">@lang('general.nav.object')  <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 							  <li class="dropdown-header">Equipement</li>
 							  <li><a href="#" tabindex="-1">Ensembles d'objets</a></li>
@@ -124,7 +121,7 @@
 						  </li>
 						</ul>
 						<!-- Search Function -->
-						{!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('items.search'), 'method' => 'get']) !!}
+						{!! Form::open(['class' => 'navbar-form navbar-right', 'url' => Route('lang.items.search', ['lang' => 'fr']), 'method' => 'get']) !!}
 						<div class="form-group">
 							@if(isset($search))
 								{!! Form::text('search_value', $search, ['placeholder' => "Chercher...", 'class' => 'form-control']) !!}&nbsp;
