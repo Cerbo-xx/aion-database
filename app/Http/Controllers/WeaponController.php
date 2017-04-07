@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class WeaponController extends Controller
 {
-    public function index() {
+    public function index($lang) {
 		return view('data.table', [
 			'type'	=> 'Weapons',
             'items' => ClientItems::where('weapon_type', '<>', '')
@@ -23,7 +23,7 @@ class WeaponController extends Controller
         ]);
 	}
 	
-	public function type($type) {
+	public function type($lang,$type) {
 		switch ($type) {
 			case 'mace': 			$weaponType = '1h_mace'; 	$legend = 'masses';		break;
 			case 'dagger': 			$weaponType = '1h_dagger'; 	$legend = 'dagues';		break;
