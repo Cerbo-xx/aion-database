@@ -14,20 +14,24 @@
 Route::get('/', function () {
     return view('_modules.welcome');
 });
+
+Route::get('/{lang}/', function () {
+    return view('_modules.welcome');
+});
 Route::get('/items/', function () {
     return view('_modules.welcome');
 });
 
-Route::get('item/{id}', ['as' => 'item.id', 'uses' => 'ItemController@show']);
-Route::get('items/search', ['as' => 'items.search', 'uses' => 'SearchController@search']);
-Route::get('items/weapon', 'WeaponController@index');
-Route::get('items/weapon/{type}', 'WeaponController@type');
-Route::get('items/armor', 'ArmorController@index');
-Route::get('items/armor/{type}', 'ArmorController@type');
-Route::get('items/armor/{type}/{part}', 'ArmorController@part');
-Route::get('items/accessory', 'AccessoryController@index');
-Route::get('items/accessory/{type}', 'AccessoryController@type');
-Route::get('items/skillbook', 'SkillLearnController@skillbook');
-Route::get('items/skillbook/{class}', 'SkillLearnController@skillbook');
-Route::get('items/stigma', 'SkillLearnController@stigma');
-Route::get('items/stigma/{class}', 'SkillLearnController@stigma');
+Route::get('{lang}/item/{id}', ['as' => 'lang.item.id', 'uses' => 'ItemController@show']);
+Route::get('{lang}/items/search', ['as' => 'lang.items.search', 'uses' => 'SearchController@search']);
+Route::get('{lang}/items/weapon', 'WeaponController@index');
+Route::get('{lang}/items/weapon/{type}', 'WeaponController@type');
+Route::get('{lang}/items/armor', 'ArmorController@index');
+Route::get('{lang}/items/armor/{type}', 'ArmorController@type');
+Route::get('{lang}/items/armor/{type}/{part}', 'ArmorController@part');
+Route::get('{lang}/items/accessory', 'AccessoryController@index');
+Route::get('{lang}/items/accessory/{type}', 'AccessoryController@type');
+Route::get('{lang}/items/skillbook', 'SkillLearnController@skillbook');
+Route::get('{lang}/items/skillbook/{class}', 'SkillLearnController@skillbook');
+Route::get('{lang}/items/stigma', 'SkillLearnController@stigma');
+Route::get('{lang}/items/stigma/{class}', 'SkillLearnController@stigma');
