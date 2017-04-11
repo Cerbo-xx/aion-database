@@ -1,9 +1,35 @@
 <?php
 return [
 	'nav'		=> [
-		'object'	=> 'Objets',
+		'objects'			=> 'Objets',
+		'equipment'			=> 'Équipement',
+		'sets'				=> 'Ensembles d\'objets',
+		'weapons'			=> 'Armes',
+		'1h_weapons'		=> 'Armes à une main',
+		'2h_weapons'		=> 'Armes à deux mains',
+		'remote_weapons'	=> 'Armes à distance',
+		'armors'			=> 'Armures',
+		'torso'				=> 'Vestes',
+		'glove'				=> 'Gants',
+		'shoulder'			=> 'Spallières',
+		'leg'				=> 'Jambières',
+		'foot'				=> 'Chaussures',
+		'accessory'			=> 'Accessoires',
+		'wings'				=> 'Ailes',
+		'rings'				=> 'Anneaux',
+		'earrings'			=> 'Boucles d\'oreilles',
+		'belts'				=> 'Ceintures',
+		'necklaces'			=> 'Colliers',
+		'skill'				=> 'Compétences',
+		'skillbook'			=> 'Grimoires',
+		'stigma'			=> 'Stigma',
+		'other'				=> 'Autres',
 	],
 	'welcome' => [
 		'title'		=> 'Bienvenue sur la base de données Aion :version :siteName !',
+	],
+	'search' => [
+		'search_ph'		=> 'Chercher...',
+		'error_empty'	=> 'Le champ de recherche ne peut être vide',
 	],
 ];
