@@ -247,7 +247,7 @@ class CreateClientItemsTable extends Migration
 			$table->string('custom_jump_anim', 255)->nullable();
 			$table->string('custom_rest_anim', 255)->nullable();
 			$table->integer('anim_expire_time')->nullable();
-			$table->string('race_permitted', 255)->nullable();
+			$table->string('race_permited', 255)->nullable();
 			$table->primary('id');
 			$table->index('id');
 			$table->index('desc');
