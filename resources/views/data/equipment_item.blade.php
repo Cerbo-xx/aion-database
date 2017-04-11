@@ -43,8 +43,8 @@
 									@elseif($item->race_permited == 'pc_dark') <tr><td colspan="4">@lang('general.equipment_item.rp_dark')</td></tr>
 									@endif
 									<tr><td colspan="4"><hr class="hr_long"></td></tr>
-									@if($item->weapon_type != '') 
-										<tr><td colspan="2" style="color: #efdfa7;">@lang('general.equipment_item.weapon_1') @lang('item.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => Lang::choice('general.equipment_item.impact', $item->hit_count)) 
+									@if($item->weapon_type != '')
+										<tr><td colspan="2" style="color: #efdfa7;">@lang('general.equipment_item.weapon_1') @lang('item.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => Lang::choice('general.equipment_item.impact', $item->hit_count)]) 
 										@if($item->attack_type == 'magical_water')
 											(@lang('general.equipment_item.at_magical_water'))
 										@elseif($item->attack_type == 'magical_fire')
