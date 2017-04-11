@@ -1,6 +1,6 @@
 <?php
 return [
-	'nav'		=> [
+	'nav'	=> [
 		'objects'			=> 'Objets',
 		'equipment'			=> 'Équipement',
 		'sets'				=> 'Ensembles d\'objets',
@@ -25,11 +25,29 @@ return [
 		'stigma'			=> 'Stigma',
 		'other'				=> 'Autres',
 	],
-	'welcome' => [
+	'welcome'	=> [
 		'title'		=> 'Bienvenue sur la base de données Aion :version :siteName !',
 	],
-	'search' => [
+	'search'	=> [
 		'search_ph'		=> 'Chercher...',
 		'error_empty'	=> 'Le champ de recherche ne peut être vide',
+	],
+	'equipment_item'	=> [
+		'cannot_exchange'							=> 'Impossible à échanger,',
+		'soul_blind'								=> 'Objet lié',
+		'cannot_deposit_to_character_warehouse'		=> 'Impossible à stocker dans un entrepôt ',
+		'cannot_deposit_to_account_warehouse'		=> 'Impossible à stocker dans l\'entrepôt du compte, ',
+		'cannot_deposit_to_guild_warehouse'			=> 'Impossible de stocker dans l\'entrepôt de Légion ',
+		'cannot_composite_weapon'					=> 'Impossible à fusionner ',
+		'rp_light'									=> 'Réservé aux Elyséens',
+		'rp_dark'									=> 'Réservé aux Asmodiens',
+		'weapon_1'									=> 'Arme à',
+		'impact'									=> 'impact|impacts',
+		'at_magical_water'							=> 'eau',
+		'at_magical_fire'							=> 'feu',
+		'damage_range'								=> 'Attaque',
+		'attack_delay'								=> 'Vit. d\'attaque',
+		'mana_stone'								=> 'Emplacements pour Pierre de mana (niveau :msLevel maximum)',
+		'can_proc_enchant'							=> 'Cavité de pierre divine disponible',
 	],
 ];

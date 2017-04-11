@@ -23,34 +23,34 @@
 									@endif
 									</td></tr>
 									<tr><td colspan="4" width="100%" style="color: #efdfa7;">
-										@if($item->can_exchange == 0) Impossible &agrave; &eacute;changer, 
-										@else Objet lié
+										@if($item->can_exchange == 0) @lang('general.equipment_item.cannot_exchange')
+										@else @lang('general.equipment_item.soul_blind')
 										@endif
-										@if($item->can_deposit_to_character_warehouse == 0) Impossible &agrave; stocker dans un entrep&ocirc;t 
+										@if($item->can_deposit_to_character_warehouse == 0) @lang('general.equipment_item.cannot_deposit_to_character_warehouse')
 										@else
-											@if($item->can_deposit_to_account_warehouse == 0) Impossible &agrave; stocker dans l&#39;entrep&ocirc;t du compte, 
+											@if($item->can_deposit_to_account_warehouse == 0) @lang('general.equipment_item.cannot_deposit_to_account_warehouse')
 											@endif
-											@if($item->can_deposit_to_guild_warehouse == 0) Impossible de stocker dans l&#39;entrep&ocirc;t de L&eacute;gion 
+											@if($item->can_deposit_to_guild_warehouse == 0) @lang('general.equipment_item.cannot_deposit_to_guild_warehouse')
 											@endif
 										@endif
-										@if($item->can_composite_weapon == 0 && $item->weapon_type != '') Impossible &agrave; fusionner 
+										@if($item->can_composite_weapon == 0 && $item->weapon_type != '') @lang('general.equipment_item.cannot_composite_weapon')
 										@endif
 										@if($item->soul_bind == 1)
-											Objet lié
+											@lang('general.equipment_item.soul_blind')
 										@endif
 									</td></tr>
-									@if($item->race_permited == 'pc_light') <tr><td colspan="4">Réservé aux Elyséens</td></tr>
-									@elseif($item->race_permited == 'pc_dark') <tr><td colspan="4">Réservé aux Asmodiens</td></tr>
+									@if($item->race_permited == 'pc_light') <tr><td colspan="4">@lang('general.equipment_item.rp_light')</td></tr>
+									@elseif($item->race_permited == 'pc_dark') <tr><td colspan="4">@lang('general.equipment_item.rp_dark')</td></tr>
 									@endif
 									<tr><td colspan="4"><hr class="hr_long"></td></tr>
 									@if($item->weapon_type != '') 
-										<tr><td colspan="2" style="color: #efdfa7;">Arme à @lang('item.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => $item->hit_count > 1 ? 'impacts' : 'impact']) 
+										<tr><td colspan="2" style="color: #efdfa7;">@lang('general.equipment_item.weapon_1') @lang('item.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => Lang::choice('general.equipment_item.impact', $item->hit_count)) 
 										@if($item->attack_type == 'magical_water')
-											(eau)
+											(@lang('general.equipment_item.at_magical_water'))
 										@elseif($item->attack_type == 'magical_fire')
-											(feu)
+											(@lang('general.equipment_item.at_magical_fire'))
 										@endif</td></tr><tr>
-										<tr><td>Attaque</td><td>{{$item->min_damage}} - {{$item->max_damage}}</td><td>Vit. d'attaque</td><td>{{$item->attack_delay / 1000}}</td></tr>
+										<tr><td>@lang('general.equipment_item.damage_range')</td><td>{{$item->min_damage}} - {{$item->max_damage}}</td><td>@lang('general.equipment_item.attack_delay')</td><td>{{$item->attack_delay / 1000}}</td></tr>
 										<tr>
 										@php $i = 1; @endphp
 										@foreach(Lang::get('item.weapon_main_stats') as $key => $value) 
@@ -104,7 +104,7 @@
 									</tr>
 									@if($item->msSlot > 0) 
 										<tr><td colspan="4"><hr class="hr_long"></td></tr>
-										<tr><td colspan="4">Emplacements pour Pierre de mana (niveau {{$item->msLevel}} maximum)</td></tr>
+										<tr><td colspan="4">@lang('general.equipment_item.mana_stone', ['msLevel' => $item->msLevel])</td></tr>
 										<tr>
 										@for($k = 1; $k <= $item->msSlot; $k++)
 											<td colspan="2"><img src="/theme/2.7/images/ms-socket.png" /></td>
@@ -117,7 +117,7 @@
 									@endif
 									<tr><td colspan="4"><hr class="hr_long"></td></tr>
 									@if($item->can_proc_enchant == 1) 
-										<tr><td colspan="4" style="color: #efdfa7;">Cavit&eacute; de pierre divine disponible</td></tr>
+										<tr><td colspan="4" style="color: #efdfa7;">@lang('general.equipment_item.can_proc_enchant')</td></tr>
 									@endif
 									<tr><td colspan="4">{!! nl2br(e($item->desc_long_fr)) !!}</td></tr>
 								</table></td>
