@@ -23,7 +23,7 @@ class WeaponController extends Controller
         ]);
 	}
 	
-	public function type($lang,$type) {
+	public function type($lang, $type) {
 		switch ($type) {
 			case 'mace': 			$weaponType = '1h_mace'; 	$legend = 'masses';		break;
 			case 'dagger': 			$weaponType = '1h_dagger'; 	$legend = 'dagues';		break;

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AccessoryController extends Controller
 {
-    public function index() {
+    public function index($lang) {
 		return view('data.table', [
 			'type'	=> 'Accessory',
             'items' => ClientItems::whereIn('equipment_slots', array('right_or_left_ear','neck','right_or_left_finger','waist','wing'))
@@ -23,7 +23,7 @@ class AccessoryController extends Controller
         ]);
 	}
 	
-	public function type($type) {
+	public function type($lang, $type) {
 		switch ($type) {
 			case 'wing': 			$accessoryType = 'wing'; 				$legend = 'ailes';					break;
 			case 'earring': 		$accessoryType = 'right_or_left_ear'; 	$legend = 'boucles d\'oreille';		break;

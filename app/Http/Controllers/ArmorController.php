@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ArmorController extends Controller
 {
-    public function index() {
+    public function index($lang) {
 		return view('data.table', [
 			'type'	=> 'Armor',
             'items' => ClientItems::where('armor_type', '<>', '')
@@ -23,7 +23,7 @@ class ArmorController extends Controller
         ]);
 	}
 	
-	public function type($type) {
+	public function type($lang, $type) {
 		switch ($type) {
 			case 'no_armor': 		$legend = 'costumes';	break;
 			case 'robe': 			$legend = 'tissu';		break;
@@ -46,7 +46,7 @@ class ArmorController extends Controller
         ]);
 	}
 	
-	public function part($type, $part) {
+	public function part($lang, $type, $part) {
 		switch ($type) {
 			case 'no_armor': 		$legend2 = 'costumes';	break;
 			case 'robe': 			$legend2 = 'tissu';		break;

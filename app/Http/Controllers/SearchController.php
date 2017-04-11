@@ -8,9 +8,9 @@ use App\Http\Requests\SearchRequest;
 class SearchController extends Controller
 {
 	/**
-     * POST /items/search
+     * POST /{lang}/items/search
      */
-    public function search(SearchRequest $request)
+    public function search($lang, SearchRequest $request)
     {		
 		if(empty($request->input('search_value')))
 			return;

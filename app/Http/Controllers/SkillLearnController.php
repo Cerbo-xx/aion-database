@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SkillLearnController extends Controller
 {
-	public function skillbook($class = null) {
+	public function skillbook($lang, $class = null) {
 		$items = ClientItems::where('skill_to_learn', '<>', '')
 						->where('level', '<=', 55)
 						->where('quality', '<>', 'mythic')
@@ -24,7 +24,7 @@ class SkillLearnController extends Controller
             'items' => $items
         ]);
 	}
-	public function stigma($class = null) {
+	public function stigma($lang, $class = null) {
 		return view('data.table', [
 			'type'	=> 'Affichage des pierres de stigma',
             'items' => ClientItems::where('gain_skill1', '<>', '')

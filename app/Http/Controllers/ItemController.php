@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-	public function show($lang,$id) {
+	public function show($lang, $id) {
 		$item = ClientItems::where('id', $id)->first();
 		if(empty($item))
 		{
