@@ -6,20 +6,20 @@
 				<div class="outer item_info">
 					<div class="insider">
 						<p>[item: {{$item->id}}]</p>
-						<div class="item-icon"><img src="/items/{!! strtolower($item->icon_name)!!}.png" alt="icon" width="40" height="40"></div> 
+						<div class="item-icon"><img src="/theme/2.7/images/icons/{!! strtolower($item->icon_name)!!}.png" alt="icon" width="40" height="40"></div> 
 						<table class="item_table">
 							<tr>
 								<td><table class="item_stats_table">
 									<tr><td colspan="4" class="item_title quality-{{$item->quality}}">{{$item->desc_fr}}</td></tr>
 									<tr><td style="width: 35%">Type</td><td style="width: 15%">&nbsp;</td><td style="width: 35%">&nbsp;</td><td style="width: 15%">
 									@if($item->weapon_type != '')
-										@lang('aion.weapon_type.'.$item->weapon_type)
+										@lang('item.weapon_type.'.$item->weapon_type)
 									@elseif($item->armor_type == 'no_armor')
-										@lang('aion.armor_type.'.$item->equipment_slots)
+										@lang('item.armor_type.'.$item->equipment_slots)
 									@elseif($item->armor_type != '')
-										@lang('aion.armor_type.'.$item->armor_type)
+										@lang('item.armor_type.'.$item->armor_type)
 									@elseif($item->equipment_slots != '')
-										@lang('aion.armor_type.'.$item->equipment_slots)
+										@lang('item.armor_type.'.$item->equipment_slots)
 									@endif
 									</td></tr>
 									<tr><td colspan="4" width="100%" style="color: #efdfa7;">
@@ -43,8 +43,8 @@
 									@elseif($item->race_permited == 'pc_dark') <tr><td colspan="4">Réservé aux Asmodiens</td></tr>
 									@endif
 									<tr><td colspan="4"><hr class="hr_long"></td></tr>
-									@if($item->weapon_type != '')
-										<tr><td colspan="2" style="color: #efdfa7;">Arme à @lang('aion.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => $item->hit_count > 1 ? 'impacts' : 'impact']) 
+									@if($item->weapon_type != '') 
+										<tr><td colspan="2" style="color: #efdfa7;">Arme à @lang('item.weapon_impact.'.$item->weapon_type, ['qty' => $item->hit_count, 'impact' => $item->hit_count > 1 ? 'impacts' : 'impact']) 
 										@if($item->attack_type == 'magical_water')
 											(eau)
 										@elseif($item->attack_type == 'magical_fire')
@@ -53,7 +53,7 @@
 										<tr><td>Attaque</td><td>{{$item->min_damage}} - {{$item->max_damage}}</td><td>Vit. d'attaque</td><td>{{$item->attack_delay / 1000}}</td></tr>
 										<tr>
 										@php $i = 1; @endphp
-										@foreach(Lang::get('aion.weapon_main_stats') as $key => $value) 
+										@foreach(Lang::get('item.weapon_main_stats') as $key => $value) 
 											@if($item->$key > 0)
 												<td>{{$value}}</td><td>{{$item->$key}}</td>
 												@if($i++ >= 2) </tr><tr>@php if($i >= 2) $i = 1; @endphp
@@ -64,7 +64,7 @@
 									@elseif($item->armor_type != '')
 										<tr>
 										@php $i = 1; @endphp
-										@foreach(Lang::get('aion.armor_main_stats') as $key => $value)
+										@foreach(Lang::get('item.armor_main_stats') as $key => $value)
 											@if($item->$key > 0)
 												<td>{{$value}}</td><td>{{$item->$key}}</td>
 												@if($i++ % 2 == 0) </tr><tr> @endif
@@ -74,7 +74,7 @@
 									@elseif($item->equipment_slots != '')
 										<tr>
 										@php $i = 1; @endphp
-										@foreach(Lang::get('aion.accessory_main_stats') as $key => $value)
+										@foreach(Lang::get('item.accessory_main_stats') as $key => $value)
 											@if($item->$key > 0)
 												<td>{{$value}}</td><td>{{$item->$key}}</td>
 												@if($i++ % 2 == 0) </tr><tr> @endif
@@ -97,7 +97,7 @@
 											}
 											$value = str_replace('+-', '-', '+' . $value);
 											@endphp
-											<td>@lang('aion.item_sub_stats.'.$name)</td><td>{{$value}}</td>
+											<td>@lang('item.item_sub_stats.'.$name)</td><td>{{$value}}</td>
 											@if($loop % 2 == 0) </tr><tr> @endif 
 										@endif
 									@endfor
@@ -107,11 +107,11 @@
 										<tr><td colspan="4">Emplacements pour Pierre de mana (niveau {{$item->msLevel}} maximum)</td></tr>
 										<tr>
 										@for($k = 1; $k <= $item->msSlot; $k++)
-											<td colspan="2"><img src="/img/ms-socket.png" /></td>
+											<td colspan="2"><img src="/theme/2.7/images/ms-socket.png" /></td>
 											@if($k % 2 == 0) </tr><tr> @endif 
 										@endfor
 										@if($item->option_slot_bonus == 1)
-											<td colspan="2"><img src="/img/ms-socket-optionnal.png" /></td>
+											<td colspan="2"><img src="/theme/2.7/images/ms-socket-optionnal.png" /></td>
 										@endif
 										</tr>
 									@endif
