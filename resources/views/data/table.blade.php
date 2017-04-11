@@ -20,14 +20,14 @@
 					<tbody>
 					@foreach($items as $item)<tr>
 						<td class="strong">{{$item->id}}</td>
-						<td class="strong"><img src="/items/{!! strtolower($item->icon_name)!!}.png" /></td>
+						<td class="strong"><img src="/theme/2.7/images/icons/{!! strtolower($item->icon_name)!!}.png" /></td>
 						<td class="strong"><a href="{{Route('lang.item.id', ['lang' => 'fr', 'id' => $item->id])}}"><span class="quality-{{$item->quality}}">{{$item->desc_fr}}</span></a></td>
 						<td class="strong">{{$item->level}}</td>
 						<td class="strong">
-							@if($item->race_permited == 'pc_light') <img src="{!! asset('items/light.png') !!}" />
-							@elseif($item->race_permited == 'pc_dark') <img src="{!! asset('items/dark.png') !!}" />
-							@elseif(strpos($item->desc, '_LIGHT_') !== false) <img src="{!! asset('items/light.png') !!}" />
-							@elseif(strpos($item->desc, '_DARK_') !== false) <img src="{!! asset('items/dark.png') !!}" />
+							@if($item->race_permited == 'pc_light') <img src="{!! asset('theme/2.7/images/icons/light.png') !!}" /> 
+							@elseif($item->race_permited == 'pc_dark') <img src="{!! asset('theme/2.7/images/icons/dark.png') !!}" />
+							@elseif(strpos($item->desc, '_LIGHT_') !== false) <img src="{!! asset('theme/2.7/images/icons/light.png') !!}" />
+							@elseif(strpos($item->desc, '_DARK_') !== false) <img src="{!! asset('theme/2.7/images/icons/dark.png') !!}" />
 							@endif
 						</td>
 					</tr>
