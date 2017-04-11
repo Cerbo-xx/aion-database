@@ -7,7 +7,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="Aion Database 2.7">
 	<meta name="author" content="Sipherion">
-	<link rel="icon" href="/theme/img/favicon.png">
+	<link rel="icon" href="/theme/2.7/images/favicon.png">
 	<title>Aion Database 2.7</title>
 	<!-- Bootstrap core CSS -->
 	<link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
