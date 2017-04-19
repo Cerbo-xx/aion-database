@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function() { return redirect('/fr/'); });
+Route::get('items/', function() { return redirect('/fr/'); });
+
 Route::get('{lang}/', 'WelcomeController@index');
 Route::get('{lang}/items/', 'WelcomeController@index');
-Route::get('items/', 'WelcomeController@index');
 
 Route::get('{lang}/item/{id}', ['as' => 'lang.item.id', 'uses' => 'ItemController@show']);
 Route::get('{lang}/items/search', ['as' => 'lang.items.search', 'uses' => 'SearchController@search']);

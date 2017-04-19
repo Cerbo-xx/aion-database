@@ -1,6 +1,6 @@
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Aion Database
+				<a class="navbar-brand" href="/{{$lang}}/">Aion Database
 				@if(Config::get('aion.enable_2_7') == true) 2.7
 				@elseif(Config::get('aion.enable_3_9') == true) 3.9
 				@endif </a>
