@@ -11,16 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('_modules.welcome');
-});
-
-Route::get('/{lang}/', function () {
-    return view('_modules.welcome');
-});
-Route::get('/items/', function () {
-    return view('_modules.welcome');
-});
+Route::get('/', 'WelcomeController@index');
+Route::get('{lang}/', 'WelcomeController@index');
+Route::get('{lang}/items/', 'WelcomeController@index');
+Route::get('items/', 'WelcomeController@index');
 
 Route::get('{lang}/item/{id}', ['as' => 'lang.item.id', 'uses' => 'ItemController@show']);
 Route::get('{lang}/items/search', ['as' => 'lang.items.search', 'uses' => 'SearchController@search']);
