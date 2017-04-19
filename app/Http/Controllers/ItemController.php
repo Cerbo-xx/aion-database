@@ -64,6 +64,7 @@ class ItemController extends Controller
 		}
 		
 		return view($view, [
+			'lang'	=> $lang,
             'item'	=> $item,
 			'loop'	=> 0
         ]);

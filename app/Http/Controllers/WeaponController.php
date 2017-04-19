@@ -9,6 +9,7 @@ class WeaponController extends Controller
 {
     public function index($lang) {
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Weapons',
             'items' => ClientItems::where('weapon_type', '<>', '')
 						->where('level', '<=', 55)
@@ -36,6 +37,7 @@ class WeaponController extends Controller
 			case 'sword': default: 	$weaponType = '1h_sword'; 	$legend = 'épées';		break;
 		}
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des ' . $legend,
             'items' => ClientItems::where('weapon_type', '=', $weaponType)
 						->where('level', '<=', 55)

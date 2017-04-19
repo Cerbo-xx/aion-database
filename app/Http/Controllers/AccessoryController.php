@@ -9,6 +9,7 @@ class AccessoryController extends Controller
 {
     public function index($lang) {
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Accessory',
             'items' => ClientItems::whereIn('equipment_slots', array('right_or_left_ear','neck','right_or_left_finger','waist','wing'))
 						->where('level', '<=', 55)
@@ -32,6 +33,7 @@ class AccessoryController extends Controller
 			case 'belt': default:	$accessoryType = 'waist'; 				$legend = 'ceintures';				break;
 		}
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des ' . $legend,
             'items' => ClientItems::where('equipment_slots', '=', $accessoryType)
 						->where('level', '<=', 55)

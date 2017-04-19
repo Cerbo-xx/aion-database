@@ -9,6 +9,7 @@ class ArmorController extends Controller
 {
     public function index($lang) {
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Armor',
             'items' => ClientItems::where('armor_type', '<>', '')
 						->where('level', '<=', 55)
@@ -32,6 +33,7 @@ class ArmorController extends Controller
 			case 'plate': default: 	$legend = 'plaques';	break;
 		}
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des armures en ' . $type,
             'items' => ClientItems::where('armor_type', '=', $type)
 						->where('level', '<=', 55)

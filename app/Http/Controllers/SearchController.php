@@ -27,6 +27,7 @@ class SearchController extends Controller
         $results->appends(['search_value' => $searchValue]);
 
         return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'R&eacute;sultats de la recherche pour &quot;' . $searchValue . '&quot;',
 			'search'=> $searchValue,
             'items' => $results

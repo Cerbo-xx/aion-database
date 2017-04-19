@@ -20,12 +20,14 @@ class SkillLearnController extends Controller
 						->paginate(100);
 						
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des grimoires de comp&eacute;tence',
             'items' => $items
         ]);
 	}
 	public function stigma($lang, $class = null) {
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des pierres de stigma',
             'items' => ClientItems::where('gain_skill1', '<>', '')
 						->where('level', '<=', 55)
