@@ -21,7 +21,7 @@
 					@foreach($items as $item)<tr>
 						<td class="strong">{{$item->id}}</td>
 						<td class="strong"><img src="/theme/2.7/images/icons/{!! strtolower($item->icon_name)!!}.png" /></td>
-						<td class="strong"><a href="{{Route('lang.item.id', ['lang' => $lang, 'id' => $item->id])}}"><span class="quality-{{$item->quality}}">{{$item->desc_fr}}</span></a></td>
+						<td class="strong"><a href="{{Route('lang.item.id', ['lang' => $lang, 'id' => $item->id])}}"><span class="quality-{{$item->quality}}">@if($lang == 'fr'){{$item->desc_fr}}@elseif($lang == 'en'){{$item->desc_en}}@endif</span></a></td>
 						<td class="strong">{{$item->level}}</td>
 						<td class="strong">
 							@if($item->race_permited == 'pc_light') <img src="{!! asset('theme/2.7/images/icons/light.png') !!}" /> 
