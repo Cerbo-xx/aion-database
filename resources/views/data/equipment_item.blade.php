@@ -10,7 +10,7 @@
 						<table class="item_table">
 							<tr>
 								<td><table class="item_stats_table">
-									<tr><td colspan="4" class="item_title quality-{{$item->quality}}">{{$item->desc_fr}}</td></tr>
+									<tr><td colspan="4" class="item_title quality-{{$item->quality}}">@if($lang == 'fr'){{$item->desc_fr}}@elseif($lang == 'en'){{$item->desc_en}}@endif</td></tr> 
 									<tr><td style="width: 35%">Type</td><td style="width: 15%">&nbsp;</td><td style="width: 35%">&nbsp;</td><td style="width: 15%">
 									@if($item->weapon_type != '')
 										@lang('item.weapon_type.'.$item->weapon_type)
