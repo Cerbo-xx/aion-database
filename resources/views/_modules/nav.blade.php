@@ -138,10 +138,10 @@
 								</li>
 								<li style="display: flex;">
 									<a href="{{preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)\/([a-zA-Z]{2,2})\/(.+)@', '/fr/$8', Request::url())}}">
-										<img src="{!! asset('theme/2.7/images/french.png') !!}" />
+										<img src="{!! asset('theme/2.7/images/french.png') !!}" title="Afficher en français" alt="Français" />
 									</a>
 									<a href="{{preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)\/([a-zA-Z]{2,2})\/(.+)@', '/en/$8', Request::url())}}">
-										<img src="{!! asset('theme/2.7/images/english.png') !!}" />
+										<img src="{!! asset('theme/2.7/images/english.png') !!}" title="Switch to english" alt="English" />
 									</a>
 								</li>
 							</ul>
