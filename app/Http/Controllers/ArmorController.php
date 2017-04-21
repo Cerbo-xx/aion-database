@@ -66,6 +66,7 @@ class ArmorController extends Controller
 			case 'foot': default: 	$legend = 'bottes';				$part = 'foot'; break;
 		}
 		return view('data.table', [
+			'lang'	=> $lang,
 			'type'	=> 'Affichage des ' . $legend . ' en ' . $legend2,
             'items' => ClientItems::where('armor_type', '=', $type)
 						->where('equipment_slots', 'like', '%' . $part . '%')
