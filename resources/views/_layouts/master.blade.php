@@ -42,18 +42,19 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/js/jquery-2.2.4.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="{!! asset('js/jquery-2.2.4.min.js') !!}"></script>
+	<script src="{!! asset('js/bootstrap.min.js') !!}"></script>
 	
 	<script type="text/javascript">
-		function getTip(id) {			
+		function getTip(id) {
+			console.log('/{{$lang}}/tip/'+id);
 			$.ajax({
 				type : 'GET',
-				url : '/tip.php',
+				url : '/{{$lang}}/tip/'+id,
 				data : 'item='+id,
 				beforeSend : function() {
-					$(".coupontooltip").html("Chargement...")
-					$(".coupontooltip").css("display","block")
+					$(".coupontooltip").html("Chargement...");
+					$(".coupontooltip").css("display","block");
 				},
 				success : function(data) {
 					$(".coupontooltip").html(data);
@@ -68,12 +69,12 @@
 		function fn(e) {
 			for (var i=tooltip.length; i--;) {
 				tooltip[i].style.left = e.pageX + 'px';
-				tooltip[i].style.top = e.pageY - 200 + 'px';
+				tooltip[i].style.top = e.pageY + 'px';
 			}
 		}
 		
 		function hideDiv() {
-			$(".coupontooltip").css("display","none")
+			$(".coupontooltip").css("display","none");
 		}
 	</script>
 </body>

@@ -7,20 +7,29 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-	public function show($lang, $id) {
+	public function show($lang, $type, $id) {
 		$item = ClientItems::where('id', $id)->first();
+		switch ($type) {
+			case 'tip':
+				$viewFolder = 'tooltip';
+				break;
+			default:
+			case 'item':
+				$viewFolder = 'data';
+				break;
+		}
 		if(empty($item))
 		{
-			return view('data.unknown_item', ['id' => $id]);
+			return view($viewFolder.'.unknown_item', ['id' => $id]);
 		}
 		
 		if($item->equipment_slots == 'none')
 		{
-			$view = 'data.other_item';
+			$view = $viewFolder.'.other_item';
 		}
 		else
 		{
-			$view = 'data.equipment_item';
+			$view = $viewFolder.'.equipment_item';
 		}
 		
 		/**
