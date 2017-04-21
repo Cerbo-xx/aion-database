@@ -137,10 +137,10 @@
 								{!! Form::close() !!}
 								</li>
 								<li style="display: flex;">
-									<a href="{{preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)\/([a-zA-Z]{2,2})\/(.+)@', '/fr/$8', Request::url())}}">
+									<a href="{{preg_replace('/[-a-zA-Z0-9@:%_\+.~\#?&\/\/=]{2,256}\.[a-z]{2,4}\b\/(fr|en)(\/[-a-zA-Z0-9@:%_\+.~\#?&\/\/=]*)?/', '/fr$2', Request::fullUrl())}}"> 
 										<img src="{!! asset('theme/2.7/images/french.png') !!}" title="Afficher en français" alt="Français" />
 									</a>
-									<a href="{{preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)\/([a-zA-Z]{2,2})\/(.+)@', '/en/$8', Request::url())}}">
+									<a href="{{preg_replace('/[-a-zA-Z0-9@:%_\+.~\#?&\/\/=]{2,256}\.[a-z]{2,4}\b\/(fr|en)(\/[-a-zA-Z0-9@:%_\+.~\#?&\/\/=]*)?/', '/en$2', Request::fullUrl())}}"> 
 										<img src="{!! asset('theme/2.7/images/english.png') !!}" title="Switch to english" alt="English" />
 									</a>
 								</li>
