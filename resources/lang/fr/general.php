@@ -41,7 +41,6 @@ return [
 		'cannot_composite_weapon'					=> 'Impossible à fusionner ',
 		'rp_light'									=> 'Réservé aux Elyséens',
 		'rp_dark'									=> 'Réservé aux Asmodiens',
-		'weapon_1'									=> 'Arme à',
 		'impact'									=> 'impact|impacts',
 		'at_magical_water'							=> 'eau',
 		'at_magical_fire'							=> 'feu',

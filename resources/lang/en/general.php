@@ -41,7 +41,6 @@ return [
 		'cannot_composite_weapon'					=> 'Uncombinable ',
 		'rp_light'									=> 'Elyos Only',
 		'rp_dark'									=> 'Asmodian Only',
-		'weapon_1'									=> 'Weapon with',
 		'impact'									=> 'strike|strikes',
 		'at_magical_water'							=> 'water',
 		'at_magical_fire'							=> 'fire',
